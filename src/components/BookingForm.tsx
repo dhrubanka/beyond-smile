@@ -60,27 +60,33 @@ export default function BookingForm() {
       whatsappMessage += `🚨 *EMERGENCY APPOINTMENT* 🚨\n\n`;
     }
     
-    whatsappMessage += `👤 *Patient Information:*\n`;
+    whatsappMessage += `👤 *Patient Information:*
+`;
     whatsappMessage += `• Name: ${name}\n`;
     whatsappMessage += `• Phone: ${phone}\n`;
     whatsappMessage += `• Email: ${email}\n\n`;
     
-    whatsappMessage += `🔧 *Service Requested:*\n`;
+    whatsappMessage += `🔧 *Service Requested:*
+`;
     const selectedService = services.find(s => s.value === service);
     whatsappMessage += `• ${selectedService?.label || service}\n\n`;
     
     if (preferredDate || preferredTime) {
-      whatsappMessage += `📅 *Preferred Appointment Time:*\n`;
+      whatsappMessage += `📅 *Preferred Appointment Time:*
+`;
       if (preferredDate) whatsappMessage += `• Date: ${preferredDate}\n`;
       if (preferredTime) whatsappMessage += `• Time: ${preferredTime}\n\n`;
     }
     
     if (message.trim()) {
-      whatsappMessage += `💬 *Additional Notes:*\n${message}\n\n`;
+      whatsappMessage += `💬 *Additional Notes:*
+${message}\n\n`;
     }
     
-    whatsappMessage += `---\n`;
-    whatsappMessage += `📱 Sent via SmileCare Dental Website\n`;
+    whatsappMessage += `--- --- --- ---
+`;
+    whatsappMessage += `📱 Sent via Beyond Smile Dental Care Website
+`;
     whatsappMessage += `🕒 ${new Date().toLocaleString()}`;
     
     return encodeURIComponent(whatsappMessage);
@@ -101,7 +107,7 @@ export default function BookingForm() {
     const message = generateWhatsAppMessage();
     
     // WhatsApp Business number (replace with actual number)
-    const whatsappNumber = '1234567890'; // Replace with actual WhatsApp Business number (without + or country code)
+    const whatsappNumber = '+919549213923'; // Replace with actual WhatsApp Business number (without + or country code)
     
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
@@ -306,11 +312,7 @@ export default function BookingForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg transition-colors ${
-                    isSubmitting
-                      ? 'bg-gray-400 text-white cursor-not-allowed'
-                      : 'bg-green-600 text-white hover:bg-green-700'
-                  }`}
+                  className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg transition-colors ${isSubmitting ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-green-600 text-white hover:bg-green-700'}`}
                 >
                   {isSubmitting ? (
                     <>
@@ -361,8 +363,8 @@ export default function BookingForm() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-3">Send us your questions</p>
-              <a href="mailto:info@smilecaredental.com" className="text-green-600 hover:text-green-700 font-medium">
-                info@smilecaredental.com
+              <a href="mailto:info@beyondsmiledentalcare.com" className="text-green-600 hover:text-green-700 font-medium">
+                info@beyondsmiledentalcare.com
               </a>
             </div>
 
