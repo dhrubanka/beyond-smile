@@ -160,7 +160,7 @@ ${message}\n\n`;
                 </svg>
                 <div>
                   <p className="text-red-700 font-medium">Dental Emergency?</p>
-                  <p className="text-red-600 text-sm">Call our emergency line immediately: (555) 911-CARE</p>
+                  <p className="text-red-600 text-sm">Call our emergency line immediately: +919549213923</p>
                 </div>
               </div>
             </div>
@@ -211,7 +211,7 @@ ${message}\n\n`;
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="(555) 123-4567"
+                    placeholder=""
                   />
                 </div>
               </div>
@@ -350,7 +350,7 @@ ${message}\n\n`;
               <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
               <p className="text-gray-600 text-sm mb-3">Speak directly with our team</p>
               <a href="tel:+15551234567" className="text-blue-600 hover:text-blue-700 font-medium">
-                (555) 123-4567
+                +919549213923
               </a>
             </div>
 
@@ -377,7 +377,7 @@ ${message}\n\n`;
               <h3 className="font-semibold text-gray-900 mb-2">Emergency</h3>
               <p className="text-gray-600 text-sm mb-3">24/7 urgent dental care</p>
               <a href="tel:+15559111234" className="text-red-600 hover:text-red-700 font-medium">
-                (555) 911-CARE
+                +919549213923
               </a>
             </div>
           </div>
