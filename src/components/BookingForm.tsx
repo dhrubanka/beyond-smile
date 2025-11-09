@@ -363,8 +363,8 @@ ${message}\n\n`;
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-3">Send us your questions</p>
-              <a href="mailto:info@beyondsmiledentalcare.com" className="text-green-600 hover:text-green-700 font-medium">
-                info@beyondsmiledentalcare.com
+              <a href="mailto:beyondsmiledentalcare@gmail.com" className="text-green-600 hover:text-green-700 font-medium">
+                beyondsmiledentalcare@gmail.com
               </a>
             </div>
 
