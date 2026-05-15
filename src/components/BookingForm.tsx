@@ -355,8 +355,8 @@ export default function BookingForm() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
               <p className="text-gray-600 text-sm mb-3">Speak directly with our team</p>
-              <a href="tel:+919549213923" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
-                +919549213923
+              <a href="tel:+919549213923" className="text-blue-600 hover:text-blue-700 font-medium transition-colors break-all">
+                +91 95492 13923
               </a>
             </div>
 
@@ -366,7 +366,7 @@ export default function BookingForm() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-3">Send us your questions</p>
-              <a href="mailto:beyondsmiledentalcare@gmail.com" className="text-green-600 hover:text-green-700 font-medium transition-colors">
+              <a href="mailto:beyondsmiledentalcare@gmail.com" className="text-green-600 hover:text-green-700 font-medium transition-colors break-all text-sm">
                 beyondsmiledentalcare@gmail.com
               </a>
             </div>
@@ -377,8 +377,8 @@ export default function BookingForm() {
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Emergency</h3>
               <p className="text-gray-600 text-sm mb-3">24/7 urgent dental care</p>
-              <a href="tel:+919549213923" className="text-red-600 hover:text-red-700 font-medium transition-colors">
-                +919549213923
+              <a href="tel:+919549213923" className="text-red-600 hover:text-red-700 font-medium transition-colors break-all">
+                +91 95492 13923
               </a>
             </div>
           </div>
