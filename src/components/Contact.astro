@@ -2,29 +2,30 @@
 import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCard, BadgeCheck } from 'lucide-react';
 ---
 
-<section id="contact" class="py-20 bg-white">
+<section id="contact" class="py-24 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="grid lg:grid-cols-2 gap-16">
       
       <!-- Left Side - Contact Information -->
       <div class="reveal-left">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wide mb-4">Contact Us</span>
         <h2 class="text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-        <p class="text-xl text-gray-600 mb-8">
+        <p class="text-lg text-gray-600 mb-8">
           Ready to schedule your appointment? We're here to help! Contact us today 
           to learn more about our services or book your visit.
         </p>
 
         <!-- Contact Methods -->
-        <div class="space-y-6 mb-12">
+        <div class="space-y-6 mb-8">
           <!-- Phone -->
           <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <Phone class="w-6 h-6 text-blue-600" />
+            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mt-0.5 flex-shrink-0">
+              <Phone class="w-5 h-5 text-primary-600" />
             </div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Phone</h3>
-              <p class="text-gray-600">Call us during business hours</p>
-              <a href="tel:+919549213923" class="text-blue-600 hover:text-blue-700 font-medium transition-colors">
+              <p class="text-gray-500 text-sm">Call us during business hours</p>
+              <a href="tel:+919549213923" class="text-primary-600 hover:text-primary-700 font-medium transition-colors duration-200">
                 +919549213923
               </a>
             </div>
@@ -32,13 +33,13 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
 
           <!-- Emergency Phone -->
           <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <AlertTriangle class="w-6 h-6 text-red-600" />
+            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mt-0.5 flex-shrink-0">
+              <AlertTriangle class="w-5 h-5 text-red-600" />
             </div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Emergency Line</h3>
-              <p class="text-gray-600">24/7 emergency dental care</p>
-              <a href="tel:+919549213923" class="text-red-600 hover:text-red-700 font-medium transition-colors">
+              <p class="text-gray-500 text-sm">24/7 emergency dental care</p>
+              <a href="tel:+919549213923" class="text-red-600 hover:text-red-700 font-medium transition-colors duration-200">
                 +919549213923
               </a>
             </div>
@@ -46,13 +47,13 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
 
           <!-- Email -->
           <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <Mail class="w-6 h-6 text-green-600" />
+            <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mt-0.5 flex-shrink-0">
+              <Mail class="w-5 h-5 text-emerald-600" />
             </div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
-              <p class="text-gray-600">Send us a message anytime</p>
-              <a href="mailto:beyondsmiledentalcare@gmail.com" class="text-green-600 hover:text-green-700 font-medium transition-colors">
+              <p class="text-gray-500 text-sm">Send us a message anytime</p>
+              <a href="mailto:beyondsmiledentalcare@gmail.com" class="text-emerald-600 hover:text-emerald-700 font-medium transition-colors duration-200">
                 beyondsmiledentalcare@gmail.com
               </a>
             </div>
@@ -60,8 +61,8 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
 
           <!-- Address -->
           <div class="flex items-start space-x-4">
-            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <MapPin class="w-6 h-6 text-purple-600" />
+            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mt-0.5 flex-shrink-0">
+              <MapPin class="w-5 h-5 text-purple-600" />
             </div>
             <div>
               <h3 class="font-semibold text-gray-900 mb-1">Visit Us</h3>
@@ -70,19 +71,19 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
                  Lokhra Chariali,<br/>
                 Guwahati, Assam
               </p>
-              <a href="https://maps.app.goo.gl/aV4V6xsbUCp4Fq8f7?g_st=aw" target="_blank" rel="noopener noreferrer" class="text-purple-600 hover:text-purple-700 font-medium inline-flex items-center transition-colors group">
+              <a href="https://maps.app.goo.gl/aV4V6xsbUCp4Fq8f7?g_st=aw" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center transition-colors duration-200 group">
                 Get Directions
-                <ExternalLink class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" />
+                <ExternalLink class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform duration-200" />
               </a>
             </div>
           </div>
         </div>
 
         <!-- Business Hours -->
-        <div class="bg-gray-50 rounded-xl p-8">
+        <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
           <div class="flex items-center space-x-3 mb-6">
-            <Clock class="w-6 h-6 text-blue-600" />
-            <h3 class="text-2xl font-semibold text-gray-900">Business Hours</h3>
+            <Clock class="w-5 h-5 text-primary-600" />
+            <h3 class="text-xl font-semibold text-gray-900">Business Hours</h3>
           </div>
           <div class="space-y-3">
             <div class="flex justify-between">
@@ -100,7 +101,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
       <!-- Right Side - Map and Quick Contact -->
       <div class="reveal-right">
         <!-- Interactive Google Map -->
-        <div class="rounded-2xl h-80 mb-8 overflow-hidden shadow-lg relative group">
+        <div class="rounded-2xl h-80 mb-8 overflow-hidden shadow-sm border border-gray-100 relative group">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.5489167!2d91.7491333!3d26.113145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5d0052b730d7:0xc5f2d1d4da0a0924!2sBeyond+Smile+Dental+Care!5e0!3m2!1sen!2sus!4v1731168453!16s%2Fg%2F11vq4cjhkr"
             width="100%"
@@ -113,7 +114,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
             title="Beyond Smile Dental Care Location Map">
           </iframe>
           <!-- Fallback overlay with link -->
-          <div class="absolute inset-0 bg-blue-600 bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="absolute inset-0 bg-primary-600 bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <div class="text-center text-white p-6">
               <MapPin class="w-12 h-12 mx-auto mb-4" />
               <h3 class="text-xl font-semibold mb-2">Get Directions</h3>
@@ -122,7 +123,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
                 href="https://www.google.com/maps/place/Beyond+Smile+Dental+Care!+Dr.+Bishal+Kalita/@26.113145,91.7491333,17z/data=!4m16!1m9!3m8!1s0x375a5d0052b730d7:0xc5f2d1d4da0a0924!2sBeyond+Smile+Dental+Care*21+Dr.+Bishal+Kalita!8m2!3d26.113145!4d91.7491333!9m1!1b1!16s%2Fg%2F11vq4cjhkr!3m5!1s0x375a5d0052b730d7:0xc5f2d1d4da0a0924!8m2!3d26.113145!4d91.7491333!16s%2Fg%2F11vq4cjhkr?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                class="inline-flex items-center bg-white text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-primary-50 transition-colors duration-200"
               >
                 <ExternalLink class="w-5 h-5 mr-2" />
                 Open in Google Maps
@@ -132,8 +133,8 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
         </div>
 
         <!-- Quick Contact Form -->
-        <div class="bg-blue-50 rounded-2xl p-8">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Quick Message</h3>
+        <div class="bg-primary-50 rounded-2xl p-8">
+          <h3 class="text-xl font-semibold text-gray-900 mb-6">Quick Message</h3>
           <form class="space-y-4" name="contact" netlify>
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
@@ -142,7 +143,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
                 id="name"
                 name="name"
                 required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200"
                 placeholder="Your full name"
               />
             </div>
@@ -154,7 +155,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
                 id="phone"
                 name="phone"
                 required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200"
                 placeholder="Your phone number"
               />
             </div>
@@ -164,7 +165,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
               <select
                 id="service"
                 name="service"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200"
               >
                 <option value="">Select a service</option>
                 <option value="general">General Checkup</option>
@@ -183,14 +184,14 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
                 id="message"
                 name="message"
                 rows="4"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-shadow duration-200"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-shadow duration-200"
                 placeholder="Tell us about your dental needs or questions..."
               ></textarea>
             </div>
 
             <button
               type="submit"
-              class="w-full bg-blue-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300 flex items-center justify-center hover:shadow-lg hover:-translate-y-0.5"
+              class="w-full bg-primary-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center hover:shadow-lg hover:shadow-primary-600/20"
             >
               <Send class="w-5 h-5 mr-2" />
               Send Message
@@ -198,11 +199,11 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
           </form>
 
           <div class="mt-6 text-center">
-            <p class="text-gray-600 text-sm mb-4">Or contact us directly:</p>
+            <p class="text-gray-500 text-sm mb-4">Or contact us directly:</p>
             <div class="flex justify-center gap-4">
               <a
                 href="tel:+919549213923"
-                class="flex items-center gap-4 px-5 py-2.5 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-sm hover:shadow-md"
+                class="flex items-center gap-2 px-5 py-2.5 bg-white text-primary-600 rounded-xl hover:bg-white/80 transition-colors duration-200 shadow-sm"
               >
                 <Phone class="w-5 h-5" />
                 Call Now
@@ -210,7 +211,7 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
 
               <a
                 href="mailto:beyondsmiledentalcare@gmail.com"
-                class="flex items-center gap-4 px-5 py-2.5 bg-white text-green-600 rounded-lg hover:bg-green-50 transition-all duration-300 shadow-sm hover:shadow-md"
+                class="flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-600 rounded-xl hover:bg-white/80 transition-colors duration-200 shadow-sm"
               >
                 <Mail class="w-5 h-5" />
                 Email
@@ -222,24 +223,24 @@ import { Phone, AlertTriangle, Mail, MapPin, Clock, Send, ExternalLink, CreditCa
     </div>
 
     <!-- Insurance & Payment Info -->
-    <div class="mt-20 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12 reveal">
-      <h3 class="text-3xl font-bold text-center text-gray-900 mb-8">Payment Options</h3>
+    <div class="mt-16 bg-gradient-to-r from-primary-50 to-white rounded-2xl p-10 md:p-12 border border-primary-100 reveal">
+      <h3 class="text-3xl font-bold text-center text-gray-900 mb-10">Payment Options</h3>
       
       <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-        <div class="text-center reveal reveal-delay-1">
-          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CreditCard class="w-8 h-8 text-green-600" />
+        <div class="text-center reveal reveal-delay-1 card-hover p-8 rounded-2xl">
+          <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <CreditCard class="w-7 h-7 text-emerald-600" />
           </div>
-          <h4 class="text-xl font-semibold text-gray-900 mb-2">Payment Plans</h4>
-          <p class="text-gray-600">Flexible financing options available including interest-free payment plans</p>
+          <h4 class="text-lg font-semibold text-gray-900 mb-2">Payment Plans</h4>
+          <p class="text-gray-500 text-sm">Flexible financing options available including interest-free payment plans</p>
         </div>
 
-        <div class="text-center reveal reveal-delay-2">
-          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <BadgeCheck class="w-8 h-8 text-purple-600" />
+        <div class="text-center reveal reveal-delay-2 card-hover p-8 rounded-2xl">
+          <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <BadgeCheck class="w-7 h-7 text-purple-600" />
           </div>
-          <h4 class="text-xl font-semibold text-gray-900 mb-2">Accepted Payments</h4>
-          <p class="text-gray-600">Cash, UPI and Debit cards</p>
+          <h4 class="text-lg font-semibold text-gray-900 mb-2">Accepted Payments</h4>
+          <p class="text-gray-500 text-sm">Cash, UPI and Debit cards</p>
         </div>
       </div>
     </div>

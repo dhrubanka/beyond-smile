@@ -45,11 +45,11 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial; isActive: boolean }>
 }) => {
   return (
     <div className={`transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95 absolute pointer-events-none'}`}>
-      <div className="bg-white rounded-2xl shadow-xl p-8 mx-auto max-w-4xl">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mx-auto max-w-4xl">
         <div className="flex items-start space-x-6">
           {/* Avatar Placeholder */}
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-lg">
                 {testimonial.name.split(' ').map(n => n[0]).join('')}
               </span>
@@ -82,7 +82,7 @@ const TestimonialCard: React.FC<{ testimonial: Testimonial; isActive: boolean }>
               
               <div className="text-right">
                 <div className="text-sm text-gray-600">Treatment:</div>
-                <div className="font-semibold text-blue-600">{testimonial.treatment}</div>
+                <div className="font-semibold text-primary-600">{testimonial.treatment}</div>
               </div>
             </div>
 
@@ -143,12 +143,13 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wide mb-4">Testimonials</span>
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Real experiences from real patients who trust us with their dental care. 
             See why thousands choose Beyond Smile Dental Care for their oral health needs.
           </p>
@@ -175,7 +176,7 @@ export default function Testimonials() {
           {/* Navigation Arrows */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors duration-200 border border-gray-100"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-6 h-6 text-gray-600" />
@@ -183,7 +184,7 @@ export default function Testimonials() {
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-all duration-300 hover:scale-105 border border-gray-100"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors duration-200 border border-gray-100"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6 text-gray-600" />
@@ -196,7 +197,7 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-blue-600 w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-primary-600 w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
               aria-label={`Go to testimonial ${index + 1}`}
               role="tab"
               aria-selected={index === currentIndex}
@@ -205,23 +206,23 @@ export default function Testimonials() {
         </div>
 
         {/* Stats Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl p-12 shadow-xl">
+        <div className="bg-gradient-to-br from-primary-600 to-primary-700 text-white rounded-2xl p-10 md:p-12 shadow-xl">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-blue-100">Happy Patients</div>
+              <div className="text-primary-100">Happy Patients</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">5/5</div>
-              <div className="text-blue-100">Average Rating</div>
+              <div className="text-primary-100">Average Rating</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">98%</div>
-              <div className="text-blue-100">Satisfaction Rate</div>
+              <div className="text-primary-100">Satisfaction Rate</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">5+</div>
-              <div className="text-blue-100">Years of Service</div>
+              <div className="text-primary-100">Years of Service</div>
             </div>
           </div>
         </div>

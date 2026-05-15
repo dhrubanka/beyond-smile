@@ -141,20 +141,21 @@ export default function BookingForm() {
   };
 
   return (
-    <section id="book-appointment" className="py-20 bg-gradient-to-br from-blue-50 to-white">
+    <section id="book-appointment" className="py-24 bg-gradient-to-br from-primary-50 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold tracking-wide mb-4">Book Now</span>
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Book Your Appointment</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Ready to get started? Fill out the form below and we'll connect with you via WhatsApp 
               to confirm your appointment and answer any questions.
             </p>
           </div>
 
           {/* Booking Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
             {/* Emergency Notice */}
             <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8 rounded-r-lg">
               <div className="flex items-center">
@@ -195,7 +196,7 @@ export default function BookingForm() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200 ${errors.name ? 'border-red-500' : 'border-gray-200'}`}
                     placeholder="Enter your full name"
                   />
                   {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
@@ -212,7 +213,7 @@ export default function BookingForm() {
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200 ${errors.phone ? 'border-red-500' : 'border-gray-200'}`}
                     placeholder="+91 9876543210"
                   />
                   {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
@@ -229,8 +230,8 @@ export default function BookingForm() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
-                  placeholder="your.email@example.com"
+className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200"
+                    placeholder="your.email@example.com"
                 />
               </div>
 
@@ -245,7 +246,7 @@ export default function BookingForm() {
                   required
                   value={formData.service}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200 ${errors.service ? 'border-red-500' : 'border-gray-200'}`}
                 >
                   <option value="">Select a service</option>
                   {services.map((service) => (
@@ -270,7 +271,7 @@ export default function BookingForm() {
                     value={formData.preferredDate}
                     onChange={handleInputChange}
                     min={getMinDate()}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200"
                   />
                 </div>
 
@@ -283,7 +284,7 @@ export default function BookingForm() {
                     name="preferredTime"
                     value={formData.preferredTime}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-shadow duration-200"
                   >
                     <option value="">Select preferred time</option>
                     {timeSlots.map((time) => (
@@ -306,7 +307,7 @@ export default function BookingForm() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-shadow duration-200"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none transition-shadow duration-200"
                   placeholder="Tell us about your dental concerns, insurance information, or any special requests..."
                 />
               </div>
@@ -316,10 +317,10 @@ export default function BookingForm() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 ${
+                  className={`inline-flex items-center px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-200 ${
                     isSubmitting 
                       ? 'bg-gray-400 text-white cursor-not-allowed' 
-                      : 'bg-green-600 text-white hover:bg-green-700 hover:shadow-xl hover:-translate-y-0.5'
+                      : 'bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-600/20'
                   }`}
                 >
                   {isSubmitting ? (
@@ -349,20 +350,20 @@ export default function BookingForm() {
 
           {/* Alternative Contact Methods */}
           <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-white rounded-lg shadow-md card-hover">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-blue-600" />
+            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 card-hover">
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-6 h-6 text-primary-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
               <p className="text-gray-600 text-sm mb-3">Speak directly with our team</p>
-              <a href="tel:+919549213923" className="text-blue-600 hover:text-blue-700 font-medium transition-colors break-all">
+              <a href="tel:+919549213923" className="text-primary-600 hover:text-primary-700 font-medium transition-colors break-all">
                 +91 95492 13923
               </a>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md card-hover">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-green-600" />
+            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 card-hover">
+              <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-6 h-6 text-emerald-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-3">Send us your questions</p>
@@ -371,8 +372,8 @@ export default function BookingForm() {
               </a>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md card-hover">
-              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 card-hover">
+              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <AlertTriangle className="w-6 h-6 text-red-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Emergency</h3>

@@ -1,79 +1,76 @@
 ---
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 ---
 
-<header class="sticky top-0 z-50 transition-all duration-300" id="site-header">
-  <div class="container mx-auto px-4 py-4">
-    <nav class="flex items-center justify-between" aria-label="Main navigation">
-      <!-- Logo and Clinic Name -->
-      <a href="#home" class="flex items-center space-x-3 group" aria-label="Beyond Smile Dental Care - Home">
-        <img src="/logo.png" alt="Beyond Smile Dental Care Logo" class="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110" />
-        <div>
-          <h1 class="text-md font-bold text-gray-900 font-heading">Beyond Smile Dental Care</h1>
-          <p class="text-sm text-gray-600">Your Smile, Our Priority</p>
-        </div>
-      </a>
-
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Home</a>
-        <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Services</a>
-        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">About</a>
-        <a href="#team" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Team</a>
-        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contact</a>
-      </div>
-
-      <!-- Contact Info and CTA -->
-      <div class="hidden md:flex items-center space-x-4">
-        <div class="text-right">
-          <p class="text-sm text-gray-600">Call Us Now</p>
-          <a href="tel:+919549213923" class="text-lg font-semibold text-blue-600 hover:text-blue-700 transition-colors">
-            +919549213923
+<header class="fixed top-0 left-0 right-0 z-50" id="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-4" id="nav-wrapper">
+    <div class="bg-white/70 backdrop-blur-xl rounded-2xl border border-white/50 shadow-sm transition-all duration-300" id="nav-pill">
+      <div class="px-4 py-3">
+        <nav class="flex items-center justify-between" aria-label="Main navigation">
+          <a href="#home" class="flex items-center space-x-3 group" aria-label="Beyond Smile Dental Care - Home">
+            <img src="/logo.png" alt="Beyond Smile Dental Care Logo" class="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <div>
+              <h1 class="text-md font-bold text-gray-900 font-heading">Beyond Smile Dental Care</h1>
+              <p class="text-xs text-gray-500">Your Smile, Our Priority</p>
+            </div>
           </a>
-        </div>
-        <a 
-          href="#book-appointment" 
-          class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold hover:shadow-lg hover:-translate-y-0.5"
-        >
-          Book Appointment
-        </a>
-      </div>
 
-      <!-- Mobile Menu Button -->
-      <button 
-        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" 
-        id="mobile-menu-button"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-      >
-        <span id="menu-icon-open">
-          <Menu class="w-6 h-6 text-gray-700" />
-        </span>
-        <span id="menu-icon-close" class="hidden">
-          <X class="w-6 h-6 text-gray-700" />
-        </span>
-      </button>
-    </nav>
+          <div class="hidden lg:flex items-center space-x-1">
+            <a href="#home" class="px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium text-sm">Home</a>
+            <a href="#services" class="px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium text-sm">Services</a>
+            <a href="#about" class="px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium text-sm">About</a>
+            <a href="#team" class="px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium text-sm">Team</a>
+            <a href="#contact" class="px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium text-sm">Contact</a>
+          </div>
 
-    <!-- Mobile Navigation -->
-    <div class="md:hidden mt-4 pb-4 border-t hidden" id="mobile-menu">
-      <div class="flex flex-col space-y-3 pt-4">
-        <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors py-2 font-medium">Home</a>
-        <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors py-2 font-medium">Services</a>
-        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors py-2 font-medium">About</a>
-        <a href="#team" class="text-gray-700 hover:text-blue-600 transition-colors py-2 font-medium">Team</a>
-        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors py-2 font-medium">Contact</a>
-        <div class="pt-3 border-t">
-          <p class="text-sm text-gray-600 mb-1">Call Us Now</p>
-          <a href="tel:+919549213923" class="text-lg font-semibold text-blue-600 mb-3 block">
-            +919549213923
-          </a>
-          <a 
-            href="#book-appointment" 
-            class="bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 transition-colors inline-block font-semibold"
+          <div class="hidden lg:flex items-center space-x-4">
+            <a href="tel:+919549213923" class="flex items-center space-x-2 text-gray-600 hover:text-primary-600 transition-colors duration-200">
+              <Phone class="w-4 h-4" />
+              <span class="text-sm font-medium">+919549213923</span>
+            </a>
+            <a
+              href="#book-appointment"
+              class="bg-primary-600 text-white px-5 py-2.5 rounded-xl hover:bg-primary-700 transition-colors duration-200 font-semibold text-sm hover:shadow-lg hover:shadow-primary-600/20"
+            >
+              Book Appointment
+            </a>
+          </div>
+
+          <button
+            class="lg:hidden p-2.5 rounded-xl hover:bg-gray-100 transition-colors duration-200"
+            id="mobile-menu-button"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
           >
-            Book Appointment
-          </a>
+            <span id="menu-icon-open">
+              <Menu class="w-5 h-5 text-gray-700" />
+            </span>
+            <span id="menu-icon-close" class="hidden">
+              <X class="w-5 h-5 text-gray-700" />
+            </span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="lg:hidden px-4 pb-4 border-t hidden" id="mobile-menu">
+        <div class="flex flex-col space-y-1 pt-4">
+          <a href="#home" class="px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium">Home</a>
+          <a href="#services" class="px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium">Services</a>
+          <a href="#about" class="px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium">About</a>
+          <a href="#team" class="px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium">Team</a>
+          <a href="#contact" class="px-4 py-2.5 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors duration-200 font-medium">Contact</a>
+          <div class="pt-3 mt-2 border-t">
+            <a href="tel:+919549213923" class="flex items-center space-x-2 text-primary-600 font-semibold mb-3 px-4 py-2">
+              <Phone class="w-4 h-4" />
+              <span>+919549213923</span>
+            </a>
+            <a
+              href="#book-appointment"
+              class="bg-primary-600 text-white px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors duration-200 inline-block font-semibold text-center w-full"
+            >
+              Book Appointment
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -85,14 +82,15 @@ import { Menu, X } from 'lucide-react';
   const mobileMenu = document.getElementById('mobile-menu');
   const menuIconOpen = document.getElementById('menu-icon-open');
   const menuIconClose = document.getElementById('menu-icon-close');
-  const header = document.getElementById('site-header');
+  const navPill = document.getElementById('nav-pill');
+  const navWrapper = document.getElementById('nav-wrapper');
   
   menuButton?.addEventListener('click', () => {
     const isOpen = !mobileMenu?.classList.contains('hidden');
     mobileMenu?.classList.toggle('hidden');
     menuIconOpen?.classList.toggle('hidden');
     menuIconClose?.classList.toggle('hidden');
-    menuButton?.setAttribute('aria-expanded', String(isOpen));
+    menuButton?.setAttribute('aria-expanded', String(!isOpen));
   });
 
   document.querySelectorAll('#mobile-menu a').forEach(link => {
@@ -104,15 +102,18 @@ import { Menu, X } from 'lucide-react';
     });
   });
 
-  // Glass morphism on scroll
-  let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const scrollY = window.pageYOffset;
     if (scrollY > 50) {
-      header?.classList.add('glass', 'shadow-md');
+      navWrapper?.classList.remove('mt-4');
+      navWrapper?.classList.add('mt-2');
+      navPill?.classList.remove('bg-white/70', 'border-white/50', 'shadow-sm');
+      navPill?.classList.add('bg-white/90', 'border-gray-200/50', 'shadow-lg', 'shadow-gray-900/5');
     } else {
-      header?.classList.remove('glass', 'shadow-md');
+      navWrapper?.classList.add('mt-4');
+      navWrapper?.classList.remove('mt-2');
+      navPill?.classList.add('bg-white/70', 'border-white/50', 'shadow-sm');
+      navPill?.classList.remove('bg-white/90', 'border-gray-200/50', 'shadow-lg', 'shadow-gray-900/5');
     }
-    lastScroll = scrollY;
   });
 </script>

@@ -2,17 +2,18 @@
 import { Check, ShieldCheck, BadgeCheck, Heart } from 'lucide-react';
 ---
 
-<section id="about" class="py-20 bg-white">
+<section id="about" class="py-24 bg-white">
   <div class="container mx-auto px-4">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       
       <!-- Left Content -->
       <div class="reveal-left">
+        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold tracking-wide mb-4">About Us</span>
         <h2 class="text-4xl font-bold text-gray-900 mb-6">
-          About <span class="text-blue-600">Beyond Smile Dental Care</span>
+          About <span class="text-primary-600">Beyond Smile Dental Care</span>
         </h2>
         
-        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
           For over 5 years, Beyond Smile Dental Care has been providing exceptional dental care 
           to families in our community. We combine state-of-the-art technology with 
           compassionate, personalized treatment to ensure every patient receives the 
@@ -20,8 +21,8 @@ import { Check, ShieldCheck, BadgeCheck, Heart } from 'lucide-react';
         </p>
 
         <!-- Mission Statement -->
-        <div class="bg-blue-50 rounded-xl p-6 mb-8 border border-blue-100">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Mission</h3>
+        <div class="bg-primary-50 rounded-2xl p-6 mb-8 border border-primary-100">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Our Mission</h3>
           <p class="text-gray-700 leading-relaxed">
             To provide comprehensive, comfortable, and affordable dental care while 
             building lasting relationships with our patients based on trust, respect, 
@@ -32,42 +33,42 @@ import { Check, ShieldCheck, BadgeCheck, Heart } from 'lucide-react';
         <!-- Key Features -->
         <div class="space-y-4">
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <Check class="w-4 h-4 text-green-600" />
+            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
+              <Check class="w-4 h-4 text-emerald-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Patient-Centered Care</h4>
-              <p class="text-gray-600">Every treatment plan is customized to meet your unique needs and goals</p>
+              <p class="text-gray-600 text-sm">Every treatment plan is customized to meet your unique needs and goals</p>
             </div>
           </div>
 
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <Check class="w-4 h-4 text-green-600" />
+            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
+              <Check class="w-4 h-4 text-emerald-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Advanced Technology</h4>
-              <p class="text-gray-600">Latest dental technology for precise diagnosis and comfortable treatment</p>
+              <p class="text-gray-600 text-sm">Latest dental technology for precise diagnosis and comfortable treatment</p>
             </div>
           </div>
 
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <Check class="w-4 h-4 text-green-600" />
+            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
+              <Check class="w-4 h-4 text-emerald-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Flexible Scheduling</h4>
-              <p class="text-gray-600">Early morning, evening, and weekend appointments available</p>
+              <p class="text-gray-600 text-sm">Early morning, evening, and weekend appointments available</p>
             </div>
           </div>
 
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-              <Check class="w-4 h-4 text-green-600" />
+            <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0">
+              <Check class="w-4 h-4 text-emerald-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Insurance Friendly</h4>
-              <p class="text-gray-600">We accept most dental insurance plans and offer flexible payment options</p>
+              <p class="text-gray-600 text-sm">We accept most dental insurance plans and offer flexible payment options</p>
             </div>
           </div>
         </div>
@@ -75,7 +76,6 @@ import { Check, ShieldCheck, BadgeCheck, Heart } from 'lucide-react';
 
       <!-- Right Content - Facility Images -->
       <div class="space-y-6 reveal-right">
-        <!-- Main Facility Image -->
         <div class="rounded-2xl overflow-hidden h-80 shadow-xl">
           <img
             src="/office_interior.jpeg"
@@ -85,64 +85,63 @@ import { Check, ShieldCheck, BadgeCheck, Heart } from 'lucide-react';
           />
         </div>
 
-        <!-- Stats Grid -->
         <div class="grid grid-cols-2 gap-4">
           <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-1">
-            <div class="text-3xl font-bold text-blue-600 mb-1">5+</div>
-            <div class="text-gray-600 text-sm">Years of Experience</div>
+            <div class="text-3xl font-bold text-primary-600 mb-1">5+</div>
+            <div class="text-gray-500 text-sm">Years of Experience</div>
           </div>
 
           <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-2">
-            <div class="text-3xl font-bold text-green-600 mb-1">500+</div>
-            <div class="text-gray-600 text-sm">Happy Patients</div>
+            <div class="text-3xl font-bold text-emerald-600 mb-1">500+</div>
+            <div class="text-gray-500 text-sm">Happy Patients</div>
           </div>
 
           <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-3">
             <div class="text-3xl font-bold text-purple-600 mb-1">98%</div>
-            <div class="text-gray-600 text-sm">Satisfaction Rate</div>
+            <div class="text-gray-500 text-sm">Satisfaction Rate</div>
           </div>
 
           <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-4">
             <div class="text-3xl font-bold text-orange-600 mb-1">24/7</div>
-            <div class="text-gray-600 text-sm">Emergency Care</div>
+            <div class="text-gray-500 text-sm">Emergency Care</div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Values Section -->
-    <div class="mt-20">
-      <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 reveal">Our Core Values</h3>
+    <div class="mt-16">
+      <h3 class="text-3xl font-bold text-center text-gray-900 mb-10 reveal">Our Core Values</h3>
       
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center reveal reveal-delay-1">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
-            <BadgeCheck class="w-10 h-10 text-blue-600" />
+        <div class="text-center reveal reveal-delay-1 card-hover p-8 rounded-2xl">
+          <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <BadgeCheck class="w-8 h-8 text-primary-600" />
           </div>
-          <h4 class="text-2xl font-semibold text-gray-900 mb-4">Excellence</h4>
-          <p class="text-gray-600">
+          <h4 class="text-xl font-semibold text-gray-900 mb-3">Excellence</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">
             We strive for excellence in everything we do, from clinical care to patient service, 
             continuously improving our skills and knowledge.
           </p>
         </div>
 
-        <div class="text-center reveal reveal-delay-2">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
-            <ShieldCheck class="w-10 h-10 text-green-600" />
+        <div class="text-center reveal reveal-delay-2 card-hover p-8 rounded-2xl">
+          <div class="w-16 h-16 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <ShieldCheck class="w-8 h-8 text-emerald-600" />
           </div>
-          <h4 class="text-2xl font-semibold text-gray-900 mb-4">Integrity</h4>
-          <p class="text-gray-600">
+          <h4 class="text-xl font-semibold text-gray-900 mb-3">Integrity</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">
             Honest communication, ethical practices, and transparent treatment recommendations 
             guide every interaction with our patients.
           </p>
         </div>
 
-        <div class="text-center reveal reveal-delay-3">
-          <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
-            <Heart class="w-10 h-10 text-purple-600" />
+        <div class="text-center reveal reveal-delay-3 card-hover p-8 rounded-2xl">
+          <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-6">
+            <Heart class="w-8 h-8 text-purple-600" />
           </div>
-          <h4 class="text-2xl font-semibold text-gray-900 mb-4">Compassion</h4>
-          <p class="text-gray-600">
+          <h4 class="text-xl font-semibold text-gray-900 mb-3">Compassion</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">
             We understand dental anxiety and work to create a comfortable, caring environment 
             where every patient feels heard and valued.
           </p>
