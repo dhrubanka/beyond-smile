@@ -1,4 +1,5 @@
 ---
+import { Check, ShieldCheck, BadgeCheck, Heart } from 'lucide-react';
 ---
 
 <section id="about" class="py-20 bg-white">
@@ -6,7 +7,7 @@
     <div class="grid lg:grid-cols-2 gap-16 items-center">
       
       <!-- Left Content -->
-      <div>
+      <div class="reveal-left">
         <h2 class="text-4xl font-bold text-gray-900 mb-6">
           About <span class="text-blue-600">Beyond Smile Dental Care</span>
         </h2>
@@ -19,7 +20,7 @@
         </p>
 
         <!-- Mission Statement -->
-        <div class="bg-blue-50 rounded-lg p-6 mb-8">
+        <div class="bg-blue-50 rounded-xl p-6 mb-8 border border-blue-100">
           <h3 class="text-2xl font-semibold text-gray-900 mb-3">Our Mission</h3>
           <p class="text-gray-700 leading-relaxed">
             To provide comprehensive, comfortable, and affordable dental care while 
@@ -31,10 +32,8 @@
         <!-- Key Features -->
         <div class="space-y-4">
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
-              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+              <Check class="w-4 h-4 text-green-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Patient-Centered Care</h4>
@@ -43,10 +42,8 @@
           </div>
 
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
-              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+              <Check class="w-4 h-4 text-green-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Advanced Technology</h4>
@@ -55,10 +52,8 @@
           </div>
 
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
-              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+              <Check class="w-4 h-4 text-green-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Flexible Scheduling</h4>
@@ -67,10 +62,8 @@
           </div>
 
           <div class="flex items-start space-x-4">
-            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
-              <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+            <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+              <Check class="w-4 h-4 text-green-600" />
             </div>
             <div>
               <h4 class="font-semibold text-gray-900">Insurance Friendly</h4>
@@ -81,36 +74,37 @@
       </div>
 
       <!-- Right Content - Facility Images -->
-      <div class="space-y-6">
+      <div class="space-y-6 reveal-right">
         <!-- Main Facility Image -->
-        <div class="rounded-2xl overflow-hidden h-80">
+        <div class="rounded-2xl overflow-hidden h-80 shadow-xl">
           <img
             src="/office_interior.jpeg"
-            alt="Modern Dental Office Interior"
+            alt="Modern Dental Office Interior at Beyond Smile Dental Care"
             class="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 
         <!-- Stats Grid -->
-        <div class="grid grid-cols-2 gap-6">
-          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 text-center shadow-sm">
-            <div class="text-3xl font-bold text-blue-600 mb-2">5+</div>
-            <div class="text-gray-600">Years of Experience</div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-1">
+            <div class="text-3xl font-bold text-blue-600 mb-1">5+</div>
+            <div class="text-gray-600 text-sm">Years of Experience</div>
           </div>
 
-          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 text-center shadow-sm">
-            <div class="text-3xl font-bold text-green-600 mb-2">500+</div>
-            <div class="text-gray-600">Happy Patients</div>
+          <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-2">
+            <div class="text-3xl font-bold text-green-600 mb-1">500+</div>
+            <div class="text-gray-600 text-sm">Happy Patients</div>
           </div>
 
-          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 text-center shadow-sm">
-            <div class="text-3xl font-bold text-purple-600 mb-2">98%</div>
-            <div class="text-gray-600">Satisfaction Rate</div>
+          <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-3">
+            <div class="text-3xl font-bold text-purple-600 mb-1">98%</div>
+            <div class="text-gray-600 text-sm">Satisfaction Rate</div>
           </div>
 
-          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 text-center shadow-sm">
-            <div class="text-3xl font-bold text-orange-600 mb-2">24/7</div>
-            <div class="text-gray-600">Emergency Care</div>
+          <div class="bg-white border border-gray-100 rounded-xl p-6 text-center shadow-sm card-hover reveal reveal-delay-4">
+            <div class="text-3xl font-bold text-orange-600 mb-1">24/7</div>
+            <div class="text-gray-600 text-sm">Emergency Care</div>
           </div>
         </div>
       </div>
@@ -118,14 +112,12 @@
 
     <!-- Values Section -->
     <div class="mt-20">
-      <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Core Values</h3>
+      <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 reveal">Our Core Values</h3>
       
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
+        <div class="text-center reveal reveal-delay-1">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+            <BadgeCheck class="w-10 h-10 text-blue-600" />
           </div>
           <h4 class="text-2xl font-semibold text-gray-900 mb-4">Excellence</h4>
           <p class="text-gray-600">
@@ -134,11 +126,9 @@
           </p>
         </div>
 
-        <div class="text-center">
-          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
+        <div class="text-center reveal reveal-delay-2">
+          <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+            <ShieldCheck class="w-10 h-10 text-green-600" />
           </div>
           <h4 class="text-2xl font-semibold text-gray-900 mb-4">Integrity</h4>
           <p class="text-gray-600">
@@ -147,11 +137,9 @@
           </p>
         </div>
 
-        <div class="text-center">
-          <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/>
-            </svg>
+        <div class="text-center reveal reveal-delay-3">
+          <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 hover:scale-110 transition-transform duration-300">
+            <Heart class="w-10 h-10 text-purple-600" />
           </div>
           <h4 class="text-2xl font-semibold text-gray-900 mb-4">Compassion</h4>
           <p class="text-gray-600">

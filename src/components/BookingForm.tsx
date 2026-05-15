@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { AlertTriangle, Phone, Mail } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -42,6 +43,17 @@ export default function BookingForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validate = (): boolean => {
+    const newErrors: Record<string, string> = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
+    else if (!/^[+]?[\d\s]{10,15}$/.test(formData.phone.trim())) newErrors.phone = 'Enter a valid phone number';
+    if (!formData.service) newErrors.service = 'Please select a service';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -49,73 +61,64 @@ export default function BookingForm() {
       ...prev,
       [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     }));
+    // Clear error on change
+    if (errors[name]) {
+      setErrors(prev => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
   };
 
   const generateWhatsAppMessage = (): string => {
     const { name, phone, email, service, preferredDate, preferredTime, message, isEmergency } = formData;
     
-    let whatsappMessage = `🦷 *DENTAL APPOINTMENT REQUEST* 🦷\n\n`;
+    let whatsappMessage = `\u{1F9B7} *DENTAL APPOINTMENT REQUEST* \u{1F9B7}\n\n`;
     
     if (isEmergency) {
-      whatsappMessage += `🚨 *EMERGENCY APPOINTMENT* 🚨\n\n`;
+      whatsappMessage += `\u{1F6A8} *EMERGENCY APPOINTMENT* \u{1F6A8}\n\n`;
     }
     
-    whatsappMessage += `👤 *Patient Information:*
-`;
-    whatsappMessage += `• Name: ${name}\n`;
-    whatsappMessage += `• Phone: ${phone}\n`;
-    whatsappMessage += `• Email: ${email}\n\n`;
+    whatsappMessage += `\u{1F464} *Patient Information:*\n`;
+    whatsappMessage += `\u2022 Name: ${name}\n`;
+    whatsappMessage += `\u2022 Phone: ${phone}\n`;
+    whatsappMessage += `\u2022 Email: ${email}\n\n`;
     
-    whatsappMessage += `🔧 *Service Requested:*
-`;
+    whatsappMessage += `\u{1F527} *Service Requested:*\n`;
     const selectedService = services.find(s => s.value === service);
-    whatsappMessage += `• ${selectedService?.label || service}\n\n`;
+    whatsappMessage += `\u2022 ${selectedService?.label || service}\n\n`;
     
     if (preferredDate || preferredTime) {
-      whatsappMessage += `📅 *Preferred Appointment Time:*
-`;
-      if (preferredDate) whatsappMessage += `• Date: ${preferredDate}\n`;
-      if (preferredTime) whatsappMessage += `• Time: ${preferredTime}\n\n`;
+      whatsappMessage += `\u{1F4C5} *Preferred Appointment Time:*\n`;
+      if (preferredDate) whatsappMessage += `\u2022 Date: ${preferredDate}\n`;
+      if (preferredTime) whatsappMessage += `\u2022 Time: ${preferredTime}\n\n`;
     }
     
     if (message.trim()) {
-      whatsappMessage += `💬 *Additional Notes:*
-${message}\n\n`;
+      whatsappMessage += `\u{1F4AC} *Additional Notes:*\n${message}\n\n`;
     }
     
-    whatsappMessage += `--- --- --- ---
-`;
-    whatsappMessage += `📱 Sent via Beyond Smile Dental Care Website
-`;
-    whatsappMessage += `🕒 ${new Date().toLocaleString()}`;
+    whatsappMessage += `--- --- --- ---\n`;
+    whatsappMessage += `\u{1F4F1} Sent via Beyond Smile Dental Care Website\n`;
+    whatsappMessage += `\u{1F552} ${new Date().toLocaleString()}`;
     
     return encodeURIComponent(whatsappMessage);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validate()) return;
+    
     setIsSubmitting(true);
 
-    // Validate required fields
-    if (!formData.name || !formData.phone || !formData.service) {
-      alert('Please fill in all required fields (Name, Phone, and Service)');
-      setIsSubmitting(false);
-      return;
-    }
-
-    // Generate WhatsApp message
     const message = generateWhatsAppMessage();
-    
-    // WhatsApp Business number (replace with actual number)
-    const whatsappNumber = '+919549213923'; // Replace with actual WhatsApp Business number (without + or country code)
-    
-    // Create WhatsApp URL
+    const whatsappNumber = '+919549213923';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
     
-    // Open WhatsApp
     window.open(whatsappUrl, '_blank');
     
-    // Reset form after short delay
     setTimeout(() => {
       setFormData({
         name: '',
@@ -127,11 +130,11 @@ ${message}\n\n`;
         message: '',
         isEmergency: false
       });
+      setErrors({});
       setIsSubmitting(false);
     }, 1000);
   };
 
-  // Get minimum date (today)
   const getMinDate = () => {
     const today = new Date();
     return today.toISOString().split('T')[0];
@@ -153,11 +156,9 @@ ${message}\n\n`;
           {/* Booking Form */}
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             {/* Emergency Notice */}
-            <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8 rounded">
+            <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8 rounded-r-lg">
               <div className="flex items-center">
-                <svg className="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                </svg>
+                <AlertTriangle className="w-5 h-5 text-red-500 mr-2 flex-shrink-0" />
                 <div>
                   <p className="text-red-700 font-medium">Dental Emergency?</p>
                   <p className="text-red-600 text-sm">Call our emergency line immediately: +919549213923</p>
@@ -194,9 +195,10 @@ ${message}\n\n`;
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200 ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
                     placeholder="Enter your full name"
                   />
+                  {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
                 </div>
 
                 <div>
@@ -210,9 +212,10 @@ ${message}\n\n`;
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder=""
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                    placeholder="+91 9876543210"
                   />
+                  {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
                 </div>
               </div>
 
@@ -226,7 +229,7 @@ ${message}\n\n`;
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -242,7 +245,7 @@ ${message}\n\n`;
                   required
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}
                 >
                   <option value="">Select a service</option>
                   {services.map((service) => (
@@ -251,6 +254,7 @@ ${message}\n\n`;
                     </option>
                   ))}
                 </select>
+                {errors.service && <p className="mt-1 text-sm text-red-600">{errors.service}</p>}
               </div>
 
               {/* Appointment Preferences */}
@@ -266,7 +270,7 @@ ${message}\n\n`;
                     value={formData.preferredDate}
                     onChange={handleInputChange}
                     min={getMinDate()}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
                   />
                 </div>
 
@@ -279,7 +283,7 @@ ${message}\n\n`;
                     name="preferredTime"
                     value={formData.preferredTime}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-shadow duration-200"
                   >
                     <option value="">Select preferred time</option>
                     {timeSlots.map((time) => (
@@ -302,7 +306,7 @@ ${message}\n\n`;
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none transition-shadow duration-200"
                   placeholder="Tell us about your dental concerns, insurance information, or any special requests..."
                 />
               </div>
@@ -312,7 +316,11 @@ ${message}\n\n`;
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg transition-colors ${isSubmitting ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-green-600 text-white hover:bg-green-700'}`}
+                  className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-white cursor-not-allowed' 
+                      : 'bg-green-600 text-white hover:bg-green-700 hover:shadow-xl hover:-translate-y-0.5'
+                  }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -341,42 +349,35 @@ ${message}\n\n`;
 
           {/* Alternative Contact Methods */}
           <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-white rounded-lg shadow-md">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md card-hover">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                </svg>
+                <Phone className="w-6 h-6 text-blue-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Call Us</h3>
               <p className="text-gray-600 text-sm mb-3">Speak directly with our team</p>
-              <a href="tel:+15551234567" className="text-blue-600 hover:text-blue-700 font-medium">
+              <a href="tel:+919549213923" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
                 +919549213923
               </a>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md card-hover">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-                </svg>
+                <Mail className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-3">Send us your questions</p>
-              <a href="mailto:beyondsmiledentalcare@gmail.com" className="text-green-600 hover:text-green-700 font-medium">
+              <a href="mailto:beyondsmiledentalcare@gmail.com" className="text-green-600 hover:text-green-700 font-medium transition-colors">
                 beyondsmiledentalcare@gmail.com
               </a>
             </div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-md">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md card-hover">
               <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                </svg>
+                <AlertTriangle className="w-6 h-6 text-red-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">Emergency</h3>
               <p className="text-gray-600 text-sm mb-3">24/7 urgent dental care</p>
-              <a href="tel:+15559111234" className="text-red-600 hover:text-red-700 font-medium">
+              <a href="tel:+919549213923" className="text-red-600 hover:text-red-700 font-medium transition-colors">
                 +919549213923
               </a>
             </div>
