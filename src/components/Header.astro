@@ -2,16 +2,16 @@
 import { Menu, X, Phone } from 'lucide-react';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50" id="site-header">
+<header class="fixed top-0 inset-x-0 z-50 overflow-x-hidden" id="site-header">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-4" id="nav-wrapper">
-    <div class="bg-white/70 backdrop-blur-xl rounded-2xl border border-white/50 shadow-sm transition-all duration-300" id="nav-pill">
-      <div class="px-4 py-3">
-        <nav class="flex items-center justify-between" aria-label="Main navigation">
-          <a href="#home" class="flex items-center space-x-3 group" aria-label="Beyond Smile Dental Care - Home">
-            <img src="/logo.png" alt="Beyond Smile Dental Care Logo" class="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110" />
-            <div>
-              <h1 class="text-md font-bold text-gray-900 font-heading">Beyond Smile Dental Care</h1>
-              <p class="text-xs text-gray-500">Your Smile, Our Priority</p>
+    <div class="bg-white/70 backdrop-blur-xl rounded-2xl border border-white/50 shadow-sm transition-all duration-300 w-full" id="nav-pill">
+      <div class="px-4 py-3 overflow-hidden">
+        <nav class="flex items-center justify-between w-full" aria-label="Main navigation">
+          <a href="#home" class="flex items-center space-x-3 group min-w-0 flex-1" aria-label="Beyond Smile Dental Care - Home">
+            <img src="/logo.png" alt="Beyond Smile Dental Care Logo" class="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110 flex-shrink-0" />
+            <div class="min-w-0">
+              <h1 class="text-[13px] sm:text-base font-bold text-gray-900 font-heading truncate">Beyond Smile Dental Care</h1>
+              <p class="text-[10px] sm:text-xs text-gray-500 truncate">Your Smile, Our Priority</p>
             </div>
           </a>
 
